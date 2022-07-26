@@ -1,0 +1,23 @@
+name: example
+description: A example tus client Flutter project.
+
+version: 1.0.0+1
+
+environment:
+  sdk: ">=2.7.0 <3.0.0"
+
+dependencies:
+  flutter:
+    sdk: flutter
+  tus_client:
+    path: ../
+  cross_file: ^0.3.0
+  file_picker: ^2.1.4
+  url_launcher: ^5.7.10
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+
+flutter:
+  uses-material-design: true

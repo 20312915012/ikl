@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="google-signin-client_id" content="529909501007-l4g2lfak1e234v2lci7mt20vaf8e91u4.apps.googleusercontent.com">
+  <title>a_blup</title>
+</head>
+<body  style="background-color:#171717; background: url(splash/splash.png) no-repeat center center fixed;
+        background-size: cover; /* for IE9+, Safari 4.1+, Chrome 3.0+, Firefox 3.6+ */
+        -webkit-background-size: cover; /* for Safari 3.0 - 4.0 , Chrome 1.0 - 3.0 */
+        -moz-background-size: cover; /* optional for Firefox 3.6 */ 
+        -o-background-size: cover; /* for Opera 9.5 */
+        margin: 0; /* to remove the default white margin of body */
+        padding: 0; /* to remove the default white margin of body */
+        overflow: hidden;">
+  <div><video id="splash_video" src="https://blup-files-1.s3.ap-south-1.amazonaws.com/internal-public-files/Blup_sdk_packages/splash_video.webm" width="320" autoplay loop muted style="display: block;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 240px;">
+</video></div>
+<script>
+    document.getElementById("splash_video").playbackRate = 0.2;
+</script>
+  <script src="https://www.gstatic.com/firebasejs/8.6.1/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.6.1/firebase-auth.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.6.1/firebase-analytics.js"></script>
+
+
+  <script type="module">
+    // Import the functions you need from the SDKs you need
+    // import { initializeApp } from "https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js";
+    // import { getAnalytics } from "https://www.gstatic.com/firebasejs/8.10.0/firebase-analytics.js";
+    // // TODO: Add SDKs for Firebase products that you want to use
+    // https://firebase.google.com/docs/web/setup#available-libraries
+
+    // Your web app's Firebase configuration
+    // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+    const firebaseConfig = {
+      apiKey: "---",
+      authDomain: "---",
+      projectId: "---",
+      storageBucket: "---",
+      messagingSenderId: "---",
+      appId: "---",
+      measurementId: "---"
+    };
+
+    // Initialize Firebase
+    // firebase.initializeApp(firebaseConfig);
+    // firebase.getAnalytics();
+    const app = initializeApp(firebaseConfig);
+    const analytics = getAnalytics(app);
+  </script>
+  <script type="text/javascript">
+    function removeElementsByClass(className){
+        const elements = document.getElementsByClassName(className);
+        while(elements.length > 0){
+            elements[0].parentNode.removeChild(elements[0]);
+        }
+    }
+    setTimeout( function() { 
+      removeElementsByClass("flutter-loader"); 
+    }, 200);
+  </script>
+
+  <script src="main.dart.js" type="application/javascript"></script>
+</body>
+</html>
