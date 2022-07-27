@@ -8,16 +8,15 @@ environment:
 
 dependencies:
   b_dep:
-    path: ../../../GitHub/b_dep
-  #    git:
-  #      url: https://blupDependenent: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@github.com/BlupGithub/b_dep.git
-  #      ref: v1.1096
+    git:
+      url: https://blupDependenent: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@github.com/BlupGithub/b_dep.git
+      ref: v1.1096
   cupertino_icons: 1.0.3
   event_bus: 2.0.0
   file_picker: 3.0.3
   file_selector_platform_interface: 2.0.2
   google_fonts: 2.2.0
-  image_picker: 0.8.5+3
+  image_picker: 0.7.2+1
   intl: 0.17.0
   provider: 4.3.3
   path_provider: 2.0.2
