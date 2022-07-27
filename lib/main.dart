@@ -1,3 +1,4 @@
+import 'package:b_dep/b_dep.dart';
 import 'package:flutter/material.dart';
 import 'dart:io';
 import 'dart:async';
@@ -20,8 +21,7 @@ import 'package:file_picker/file_picker.dart';
 import 'package:intl/intl.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:intl/date_symbol_data_local.dart';
-import 'package:b_dep/b_dep.dart';
- 
+
 import 'package:ikl/custom_code/custom_code.dart';
 
  
@@ -633,27 +633,27 @@ class _NewPage328400a0067711ed80c77ddd3cc54d4aState extends State<NewPage328400a
   @override
   Widget build(BuildContext context) {
         return Scaffold(
-   backgroundColor: Color(0x0),
-   resizeToAvoidBottomInset: false,
-   body: BlupSheets(
-      backendConnectStr: "",
-      backendUserAgentStr: "ayushiagg1509@gmail.com",
-      isRealtime: false,
-      queryListMap: [],
-      queryController:(context){
-         contextFromProvider=context;
-      },
-      builder: (context) => BStack(
-         id: "d67533c0-0b39-11ed-862b-998a8b985316",
-         paddingLeft: ScreenUtil().setWidth(0.0),
-         paddingRight: ScreenUtil().setWidth(0.0),
-         paddingTop: ScreenUtil().setHeight(0.0),
-         paddingBottom: ScreenUtil().setHeight(0.0),
-         isHide: false,
-         enumStackCompTypeValueStr: "enumStackCompType.Stack",
-      ),
-   ),
-);
+           backgroundColor: Color(0x0),
+           resizeToAvoidBottomInset: false,
+           body: BlupSheets(
+              backendConnectStr: "",
+              backendUserAgentStr: "ayushiagg1509@gmail.com",
+              isRealtime: false,
+              queryListMap: [],
+              queryController:(context){
+                 contextFromProvider=context;
+              },
+              builder: (context) => BStack(
+                 id: "d67533c0-0b39-11ed-862b-998a8b985316",
+                 paddingLeft: ScreenUtil().setWidth(0.0),
+                 paddingRight: ScreenUtil().setWidth(0.0),
+                 paddingTop: ScreenUtil().setHeight(0.0),
+                 paddingBottom: ScreenUtil().setHeight(0.0),
+                 isHide: false,
+                 enumStackCompTypeValueStr: "enumStackCompType.Stack",
+              ),
+           ),
+        );
   }
 
 }

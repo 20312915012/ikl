@@ -21,7 +21,7 @@
     },
     {
       "name": "b_dep",
-      "rootUri": "../../../../GitHub/b_dep",
+      "rootUri": "../plugins/b_dep",
       "packageUri": "lib/",
       "languageVersion": "2.11"
     },
@@ -710,7 +710,7 @@
       "languageVersion": "2.7"
     }
   ],
-  "generated": "2022-07-25T08:31:40.107060Z",
+  "generated": "2022-07-27T17:33:22.103017Z",
   "generator": "pub",
   "generatorVersion": "2.16.2"
 }
