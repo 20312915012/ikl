@@ -1,23 +1,38 @@
 workflows:
-  simulator-native-ios:
-    name: iOS simulator build
-    max_build_duration: 120
-    instance_type: mac_mini
+  prod-adhoc:
+    name: Production Build - AdHoc Distribution
     environment:
       vars:
-        XCODE_WORKSPACE: "Runner.xcworkspace" # <-- Put the name of your Xcode workspace here
-        XCODE_SCHEME: "Runner" # <-- Put the name of your Xcode scheme here
-      xcode: 13.0
+        XCODE_WORKSPACE: "jhutgn.xcworkspace"
+        XCODE_SCHEME: "jhutgn"
+        BUNDLE_ID: "com.jhutgn.ikl"
+        APP_STORE_CONNECT_ISSUER_ID: Encrypted()
+        APP_STORE_CONNECT_KEY_IDENTIFIER: Encrypted()
+        APP_STORE_CONNECT_PRIVATE_KEY: Encrypted()
+        CERTIFICATE_PRIVATE_KEY: Encrypted()
+      xcode: latest
       cocoapods: default
     scripts:
-      - name: Install CocoaPods dependencies
-        script: |
-          pod install
-      - name: Build ipa for distribution
-        script: |
-          xcodebuild build -workspace "$XCODE_WORKSPACE" -scheme "$XCODE_SCHEME" -sdk iphonesimulator -destination 'platform=iOS Simulator,name=iPhone 12 Pro,OS=15.4' -configuration Debug CODE_SIGN_IDENTITY="" CODE_SIGNING_REQUIRED=NO CODE_SIGNING_ALLOWED=NO
+      - find . -name "Podfile" -execdir pod install \;
+      - name: Set up keychain to be used for codesigning using Codemagic CLI 'keychain' command
+        script: keychain initialize
+      - name: Fetch signing files
+        script: # You can allow creating resources if existing are not found with `--create` flag
+          app-store-connect fetch-signing-files $BUNDLE_ID --type IOS_APP_ADHOC --create
+      - name: Use system default keychain
+          script: keychain add-certificates
+      - name: Set up signing certificate
+        script:
+          xcode-project use-profiles
+      - name: Increment build number
+        script: agvtool new-version -all $BUILD_NUMBER
+      - name: Build ipa for Adhoc
+        script: xcode-project build-ipa --workspace "$XCODE_WORKSPACE" --scheme "$XCODE_SCHEME" --verbose
     artifacts:
+      - build/ios/ipa/*.ipa
       - /tmp/xcodebuild_logs/*.log
-      - $HOME/Library/Developer/Xcode/DerivedData/**/Build/**/*.app
       - $HOME/Library/Developer/Xcode/DerivedData/**/Build/**/*.dSYM
-
+    publishing:
+      email:
+        recipients:
+          - 20312915012@cic.du.ac.in
