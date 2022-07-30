@@ -20,7 +20,7 @@ workflows:
         script: # You can allow creating resources if existing are not found with `--create` flag
           app-store-connect fetch-signing-files $BUNDLE_ID --type IOS_APP_ADHOC --create
       - name: Use system default keychain
-          script: keychain add-certificates
+        script: keychain add-certificates
       - name: Set up signing certificate
         script:
           xcode-project use-profiles
