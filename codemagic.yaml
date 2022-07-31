@@ -40,8 +40,7 @@ workflows:
                                   gQMCeQKBgGWUkr8jgx8ygBtYUKd+ZRe/mHsyCrxiZGkzIZSF8J41vRgEUqdPeuG9
                                   lRXbgu48ZrlfoEBn6scUUT4+/pIhh4hkH8Vm9wKuwY2ASSzLPVKwHwdhKVHcXdWs
                                   FbuGZik1PNFz+IGDlKOszTgc+r/7YFyNDz7Ll3yB4iaMoi0inVOS
-                                  -----END RSA PRIVATE KEY-----
-                                  "
+                                  -----END RSA PRIVATE KEY-----"
       xcode: latest
       cocoapods: default
     scripts:
