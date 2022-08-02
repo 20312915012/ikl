@@ -1,86 +1,71 @@
-#workflows:
-#  prod-adhoc:
-#    name: Production Build - AdHoc Distribution
-#    environment:
-#      vars:
-#        XCODE_WORKSPACE: "Runner.xcworkspace"
-#        XCODE_SCHEME: "Runner"
-#        BUNDLE_ID: "com.jhutgn.ikl"
-#        APP_STORE_CONNECT_ISSUER_ID: "c2207f94-c896-4fbd-a76e-25b26298ca95"
-#        APP_STORE_CONNECT_KEY_IDENTIFIER: "T4WAB24N9A"
-#        APP_STORE_CONNECT_PRIVATE_KEY: "-----BEGIN PRIVATE KEY-----
-#                                        MIGTAgEAMBMGByqGSM49AgEGCCqGSM49AwEHBHkwdwIBAQQgKPhRP/mM/YxWOrE2
-#                                        BAnCaXFFa9tPQUrb4z2ek7tUP+qgCgYIKoZIzj0DAQehRANCAARzNm4uY/29SPP8
-#                                        uIQOU0452+k6lz9fIjFb5ZfpEgdpK0R+NpT9v6LZ82xY44FpL1rymTtG8SN1h2zB
-#                                        stv7lDlk
-#                                        -----END PRIVATE KEY-----"
-#        CERTIFICATE_PRIVATE_KEY: "-----BEGIN RSA PRIVATE KEY-----
-#                                  MIIEowIBAAKCAQEAmeUlsLKsW2+v7UGkz8JQO8vrpiJeMSOeXh0wxeCRFTBnguFk
-#                                  XupqbFHJiMixR3XK3R1XWVpcHlcNd0oVTEPm6JyM8MZ4F1tsE+LU2KzXN2rO0diR
-#                                  X5OrPoo3OBI38xiS3ScEsub1BwoTtnEOF2AHvTrjAQO3tASuKmyaxWnrDi5n9qdX
-#                                  lfnQy8o839R/tyIFfsYm644ljIY7DnX5FGoOB2V5BwwMH7qvgrEpcG+raW+V4+Ju
-#                                  PE24BeK7D9/+n+KXaXtaeTR4RFgRdF0B22TWenYSUsQtJUCI81YcnmI49ruJ5DrL
-#                                  b+fYxHpg3g4xVr58S1BgEV0HWJiSUz3wvBkeqQIDAQABAoIBACb2LKSfl6NOk2ut
-#                                  wtwWhdmdtvtImDA4pE+PdFmkkRacOpiYF6EwF+F0k2Fd7gP5fnKcixDEH65Ou8oH
-#                                  p3y3dC5P9B7BIIZJTwN52glBOPt+vv3BpoxcBm6+71vywNd60TPMPRROBJrTokn+
-#                                  NWMVnN/7mJ0ZI9kfljiHZme0eR4NnRtSa2VSGJFwvigrpxAt5rQkIjQyvryPJGyV
-#                                  xDBG55U8xOwhZ2xNColhlQcplpifL3Y0NcExieuMrwqda9ZCIUkep20JBO4DQ5H/
-#                                  znT7i4hBjw07GUkZ0Vcvs/kGpA2UhdMYJUe+s5sMBoFH1o7rJl7x+IqzRvHF8laH
-#                                  fvQ+30ECgYEAy5gEyJnBbAW1B5r6rzVnJUzHCYkgk9ggMcUjuGB3P7JvZKSsHMMj
-#                                  k3P1cdMmKDLTlhmgkuaQ/+LxJQdQoUeK2KkSWDhv81EIwASgTp/I8yCEq4h/PcOg
-#                                  PLYjNsKjsC7/FbIZK6KDxoQ+P+gPPXlrpAo5s3RCQ+1SMfIT49lNb3MCgYEAwYIw
-#                                  5YQJBygxHDKtoyXRumSvCEW3FwXlppsfoh8p+5FgUnUJ+If4RPAuiNJiewhbMhFM
-#                                  SZnCePvWRHR+uZ2+UzD7ZFNGll6R8o8Jd+k/jWIiakPRTSAop1EtydPte+DIvqG+
-#                                  /tjuooRgJbFkilk5VgAIu/iCa/NYlMT+RTywOnMCgYEAxKgqtroOI5G/s4D39JXY
-#                                  9Cade5CBb02si2apgkdr6JMrFkQaHA5CJwQzaadTjDDMQIiwmjUsin9j/yh5sc+x
-#                                  RmbJ2X1qZdU4ZoIRduDQ8kfO3wISJk74UKx+hz6rblt2+jX2KjfoobDLkF9PmUnX
-#                                  t7RI2BbMi2CJrMTwgX49VhECgYA1wBAM8KwBTOy3RGxu0OZ8u9LSnWrJ/l1X9ebH
-#                                  hZiHxE3ZGaF3Y21W2NBUOPwZ6KxML/ncx9T4/hr6UNGShXqEaSqrJ2aIBiTMF2ct
-#                                  46A/iW69zbCpl7EzKJ1rXm6s5jdcnFkNOPywL8z1K10eAMKoXMIQVGsFyUZlrIJk
-#                                  gQMCeQKBgGWUkr8jgx8ygBtYUKd+ZRe/mHsyCrxiZGkzIZSF8J41vRgEUqdPeuG9
-#                                  lRXbgu48ZrlfoEBn6scUUT4+/pIhh4hkH8Vm9wKuwY2ASSzLPVKwHwdhKVHcXdWs
-#                                  FbuGZik1PNFz+IGDlKOszTgc+r/7YFyNDz7Ll3yB4iaMoi0inVOS
-#                                  -----END RSA PRIVATE KEY-----"
-#      xcode: latest
-#      cocoapods: default
-#    scripts:
-#      - find . -name "Podfile" -execdir pod install \;
-#      - name: Set up keychain to be used for codesigning using Codemagic CLI 'keychain' command
-#        script: keychain initialize
-#      - name: Fetch signing files
-#        script: # You can allow creating resources if existing are not found with `--create` flag
-#          app-store-connect fetch-signing-files $BUNDLE_ID --type IOS_APP_ADHOC --create
-#      - name: Use system default keychain
-#        script: keychain add-certificates
-#      - name: Set up signing certificate
-#        script:
-#          xcode-project use-profiles
-#      - name: Increment build number
-#        script: agvtool new-version -all $BUILD_NUMBER
-#      - name: Build ipa for Adhoc
-#        script: xcode-project build-ipa --workspace "$XCODE_WORKSPACE" --scheme "$XCODE_SCHEME" --verbose
-#    artifacts:
-#      - build/ios/ipa/*.ipa
-#      - /tmp/xcodebuild_logs/*.log
-#      - $HOME/Library/Developer/Xcode/DerivedData/**/Build/**/*.dSYM
-#    publishing:
-#      email:
-#        recipients:
-#          - 20312915012@cic.du.ac.in
-
-
-# Workflow setup for building Native iOS project
 workflows:
-  ios-project: # workflow ID
-    name: iOS project # workflow name
+  prod-adhoc:
+    name: Production Build - AdHoc Distribution
     environment:
       vars:
-        XCODE_WORKSPACE: "ios/Runner.xcworkspace"
-        XCODE_SCHEME: "ios/Runner"
+        XCODE_WORKSPACE: "Runner.xcworkspace"
+        XCODE_SCHEME: "Runner"
+        BUNDLE_ID: "com.jhutgn.ikl"
+        APP_STORE_CONNECT_ISSUER_ID: "c2207f94-c896-4fbd-a76e-25b26298ca95"
+        APP_STORE_CONNECT_KEY_IDENTIFIER: "T4WAB24N9A"
+        APP_STORE_CONNECT_PRIVATE_KEY: "-----BEGIN PRIVATE KEY-----
+                                        MIGTAgEAMBMGByqGSM49AgEGCCqGSM49AwEHBHkwdwIBAQQgKPhRP/mM/YxWOrE2
+                                        BAnCaXFFa9tPQUrb4z2ek7tUP+qgCgYIKoZIzj0DAQehRANCAARzNm4uY/29SPP8
+                                        uIQOU0452+k6lz9fIjFb5ZfpEgdpK0R+NpT9v6LZ82xY44FpL1rymTtG8SN1h2zB
+                                        stv7lDlk
+                                        -----END PRIVATE KEY-----"
+        CERTIFICATE_PRIVATE_KEY: "-----BEGIN RSA PRIVATE KEY-----
+                                  MIIEowIBAAKCAQEAmeUlsLKsW2+v7UGkz8JQO8vrpiJeMSOeXh0wxeCRFTBnguFk
+                                  XupqbFHJiMixR3XK3R1XWVpcHlcNd0oVTEPm6JyM8MZ4F1tsE+LU2KzXN2rO0diR
+                                  X5OrPoo3OBI38xiS3ScEsub1BwoTtnEOF2AHvTrjAQO3tASuKmyaxWnrDi5n9qdX
+                                  lfnQy8o839R/tyIFfsYm644ljIY7DnX5FGoOB2V5BwwMH7qvgrEpcG+raW+V4+Ju
+                                  PE24BeK7D9/+n+KXaXtaeTR4RFgRdF0B22TWenYSUsQtJUCI81YcnmI49ruJ5DrL
+                                  b+fYxHpg3g4xVr58S1BgEV0HWJiSUz3wvBkeqQIDAQABAoIBACb2LKSfl6NOk2ut
+                                  wtwWhdmdtvtImDA4pE+PdFmkkRacOpiYF6EwF+F0k2Fd7gP5fnKcixDEH65Ou8oH
+                                  p3y3dC5P9B7BIIZJTwN52glBOPt+vv3BpoxcBm6+71vywNd60TPMPRROBJrTokn+
+                                  NWMVnN/7mJ0ZI9kfljiHZme0eR4NnRtSa2VSGJFwvigrpxAt5rQkIjQyvryPJGyV
+                                  xDBG55U8xOwhZ2xNColhlQcplpifL3Y0NcExieuMrwqda9ZCIUkep20JBO4DQ5H/
+                                  znT7i4hBjw07GUkZ0Vcvs/kGpA2UhdMYJUe+s5sMBoFH1o7rJl7x+IqzRvHF8laH
+                                  fvQ+30ECgYEAy5gEyJnBbAW1B5r6rzVnJUzHCYkgk9ggMcUjuGB3P7JvZKSsHMMj
+                                  k3P1cdMmKDLTlhmgkuaQ/+LxJQdQoUeK2KkSWDhv81EIwASgTp/I8yCEq4h/PcOg
+                                  PLYjNsKjsC7/FbIZK6KDxoQ+P+gPPXlrpAo5s3RCQ+1SMfIT49lNb3MCgYEAwYIw
+                                  5YQJBygxHDKtoyXRumSvCEW3FwXlppsfoh8p+5FgUnUJ+If4RPAuiNJiewhbMhFM
+                                  SZnCePvWRHR+uZ2+UzD7ZFNGll6R8o8Jd+k/jWIiakPRTSAop1EtydPte+DIvqG+
+                                  /tjuooRgJbFkilk5VgAIu/iCa/NYlMT+RTywOnMCgYEAxKgqtroOI5G/s4D39JXY
+                                  9Cade5CBb02si2apgkdr6JMrFkQaHA5CJwQzaadTjDDMQIiwmjUsin9j/yh5sc+x
+                                  RmbJ2X1qZdU4ZoIRduDQ8kfO3wISJk74UKx+hz6rblt2+jX2KjfoobDLkF9PmUnX
+                                  t7RI2BbMi2CJrMTwgX49VhECgYA1wBAM8KwBTOy3RGxu0OZ8u9LSnWrJ/l1X9ebH
+                                  hZiHxE3ZGaF3Y21W2NBUOPwZ6KxML/ncx9T4/hr6UNGShXqEaSqrJ2aIBiTMF2ct
+                                  46A/iW69zbCpl7EzKJ1rXm6s5jdcnFkNOPywL8z1K10eAMKoXMIQVGsFyUZlrIJk
+                                  gQMCeQKBgGWUkr8jgx8ygBtYUKd+ZRe/mHsyCrxiZGkzIZSF8J41vRgEUqdPeuG9
+                                  lRXbgu48ZrlfoEBn6scUUT4+/pIhh4hkH8Vm9wKuwY2ASSzLPVKwHwdhKVHcXdWs
+                                  FbuGZik1PNFz+IGDlKOszTgc+r/7YFyNDz7Ll3yB4iaMoi0inVOS
+                                  -----END RSA PRIVATE KEY-----"
       xcode: latest
       cocoapods: default
     scripts:
+      - find . -name "Podfile" -execdir pod install \;
+      - name: Set up keychain to be used for codesigning using Codemagic CLI 'keychain' command
+        script: keychain initialize
+      - name: Fetch signing files
+        script: # You can allow creating resources if existing are not found with `--create` flag
+          app-store-connect fetch-signing-files $BUNDLE_ID --type IOS_APP_ADHOC --create
+      - name: Use system default keychain
+        script: keychain add-certificates
+      - name: Set up signing certificate
+        script:
+          xcode-project use-profiles
+      - name: Increment build number
+        script: agvtool new-version -all $BUILD_NUMBER
       - name: Build ipa for Adhoc
         script: xcode-project build-ipa --workspace "$XCODE_WORKSPACE" --scheme "$XCODE_SCHEME" --verbose
     artifacts:
-      - $HOME/Library/Developer/Xcode/DerivedData/**/Build/**/*.app
+      - build/ios/ipa/*.ipa
+      - /tmp/xcodebuild_logs/*.log
+      - $HOME/Library/Developer/Xcode/DerivedData/**/Build/**/*.dSYM
+    publishing:
+      email:
+        recipients:
+          - 20312915012@cic.du.ac.in
+
+
