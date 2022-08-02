@@ -7,12 +7,12 @@ workflows:
         XCODE_SCHEME: "Runner"
         BUNDLE_ID: "com.jhutgn.ikl"
         APP_STORE_CONNECT_ISSUER_ID: "c2207f94-c896-4fbd-a76e-25b26298ca95"
-        APP_STORE_CONNECT_KEY_IDENTIFIER: "JVPCZS4S58"
+        APP_STORE_CONNECT_KEY_IDENTIFIER: "T4WAB24N9A"
         APP_STORE_CONNECT_PRIVATE_KEY: "-----BEGIN PRIVATE KEY-----
-                                        MIGTAgEAMBMGByqGSM49AgEGCCqGSM49AwEHBHkwdwIBAQQgYMsfC7gMCEmZclQC
-                                        69alM1GOZNHEnQTwgHH9mBz6LKWgCgYIKoZIzj0DAQehRANCAAQCy0fS/Et4Xziv
-                                        q3I82Y+iVahtUcyVuYCaKF/F4HWSlxx54Y8eMMlzc8YxL2OsE77gdIkIHaw0wTob
-                                        vsBRZAyu
+                                        MIGTAgEAMBMGByqGSM49AgEGCCqGSM49AwEHBHkwdwIBAQQgKPhRP/mM/YxWOrE2
+                                        BAnCaXFFa9tPQUrb4z2ek7tUP+qgCgYIKoZIzj0DAQehRANCAARzNm4uY/29SPP8
+                                        uIQOU0452+k6lz9fIjFb5ZfpEgdpK0R+NpT9v6LZ82xY44FpL1rymTtG8SN1h2zB
+                                        stv7lDlk
                                         -----END PRIVATE KEY-----"
         CERTIFICATE_PRIVATE_KEY: "-----BEGIN RSA PRIVATE KEY-----
                                   MIIEowIBAAKCAQEAmeUlsLKsW2+v7UGkz8JQO8vrpiJeMSOeXh0wxeCRFTBnguFk
