@@ -9,11 +9,11 @@ workflows:
         APP_STORE_CONNECT_ISSUER_ID: "c2207f94-c896-4fbd-a76e-25b26298ca95"
         APP_STORE_CONNECT_KEY_IDENTIFIER: "8Y52GDJRJD"
         APP_STORE_CONNECT_PRIVATE_KEY: "-----BEGIN PRIVATE KEY-----
-        MIGTAgEAMBMGByqGSM49AgEGCCqGSM49AwEHBHkwdwIBAQQgDcTtbYJ0GU8nUEXD
-        dd2vFqx5+uHg/qMIcHAns0uA7KagCgYIKoZIzj0DAQehRANCAAQXUWpTVcwiZbAK
-        p847sprrZmP1G8vm92KcShH0MXKshra3P9Xpz6+oA0c18jWFz2y3rTlqtYNJsYaq
-        S6OgTQ3T
-        -----END PRIVATE KEY-----"
+                                        MIGTAgEAMBMGByqGSM49AgEGCCqGSM49AwEHBHkwdwIBAQQgDcTtbYJ0GU8nUEXD
+                                        dd2vFqx5+uHg/qMIcHAns0uA7KagCgYIKoZIzj0DAQehRANCAAQXUWpTVcwiZbAK
+                                        p847sprrZmP1G8vm92KcShH0MXKshra3P9Xpz6+oA0c18jWFz2y3rTlqtYNJsYaq
+                                        S6OgTQ3T
+                                        -----END PRIVATE KEY-----"
         CERTIFICATE_PRIVATE_KEY: "-----BEGIN RSA PRIVATE KEY-----
                                   MIIEowIBAAKCAQEAmeUlsLKsW2+v7UGkz8JQO8vrpiJeMSOeXh0wxeCRFTBnguFk
                                   XupqbFHJiMixR3XK3R1XWVpcHlcNd0oVTEPm6JyM8MZ4F1tsE+LU2KzXN2rO0diR
