@@ -80,6 +80,7 @@ workflows:
       xcode: latest
       cocoapods: default
     scripts:
-      - xcodebuild build -workspace "Runner.xcworkspace" -scheme "Runner" CODE_SIGN_IDENTITY="" CODE_SIGNING_REQUIRED=NO CODE_SIGNING_ALLOWED=NO
+      - name: Build ipa for Adhoc
+        script: xcode-project build-ipa --workspace "$XCODE_WORKSPACE" --scheme "$XCODE_SCHEME" --verbose
     artifacts:
       - $HOME/Library/Developer/Xcode/DerivedData/**/Build/**/*.app
