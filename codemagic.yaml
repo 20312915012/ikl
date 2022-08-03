@@ -22,7 +22,7 @@ workflows:
         --create
       - keychain add-certificates
       - xcode-project use-profiles
-      - flutter build ipaa --workspace "Runner.xcworkspace" --scheme "Runner"
+      - flutter build ipa --export-options-plist=~/export_options.plist
     artifacts:
       - build/ios/ipa/*.ipa
       - /tmp/xcodebuild_logs/*.log
